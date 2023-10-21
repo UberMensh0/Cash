@@ -1,9 +1,7 @@
 import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         int n;
         do {
             n = getCents();
@@ -19,56 +17,47 @@ public class Main {
 
         scanner.close();
     }
-
     public static int getCents() {
         Scanner x = new Scanner(System.in);
         System.out.println("Enter value:");
         return x.nextInt();
     }
-
     public static int calculateQuarters(int n)  {
-        int quarterValue = 25;
         int quarters = 0;
 
-        while (n >= quarterValue) {
-            n -= quarterValue;
+        while (n >= 25) {
+            n -= 25;
             quarters++;
         }
 
         return quarters;
     }
-
     public static int calculateDimes(int n)  {
-        int dimeValue = 10;
         int dimes = 0;
         n = n - 25 * calculateQuarters(n);
 
-        while (n >= dimeValue && n < 25) {
-            n -= dimeValue;
+        while (n >= 10 && n < 25) {
+            n -= 10;
             dimes++;
         }
         return dimes;
     }
-
     public static int calculateNickels(int n)  {
-        int nickleValue = 5;
         int nickels = 0;
         n = n - 25 * calculateQuarters(n) - 10 * calculateDimes(n);
 
-        while (n >= nickleValue && n < 10) {
-            n -= nickleValue;
+        while (n >= 5 && n < 10) {
+            n -= 5;
             nickels++;
         }
         return nickels;
     }
-
     public static int calculatePennies(int n)  {
-        int pennyValue = 1;
         int pennies = 0;
         n = n - 25 * calculateQuarters(n) - 10 * calculateDimes(n) - 5 * calculateNickels(n);
 
-        while (n >= pennyValue && n < 5) {
-            n -= pennyValue;
+        while (n >= 1 && n < 5) {
+            n -= 1;
             pennies++;
         }
         return pennies;
