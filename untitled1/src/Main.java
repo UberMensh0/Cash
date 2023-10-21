@@ -8,7 +8,7 @@ public class Main {
 
             if (n >= 0) {
                 int finalValue = calculateDimes(n) + calculateQuarters(n) + calculateNickels(n) + calculatePennies(n);
-                System.out.println("Change owed: " + n);
+                System.out.println("Change owned: " + n);
                 System.out.println(finalValue);
             } else {
                 System.out.println("ERROR, enter positive value or 0");
